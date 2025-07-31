@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['rickandmortyapi.com'],
   },
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/rick-and-morty-next.js' : '',
 };
 
 export default nextConfig;

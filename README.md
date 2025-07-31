@@ -28,20 +28,21 @@
 ## 📁 Архітектура
 
 src/
-├── app/                    # App Router структура
-│   ├── character/[id]/     # Динамічні роути
-│   ├── episodes/           # (не дописано - .txt файл)
-│   └── layout.tsx          # Глобальний layout
-├── components/             # Перевикористовувані компоненти
-│   ├── AutocompleteInput   # Пошук з автодоповненням
-│   ├── CharactersCard      # Картка персонажа
-│   └── Navbar              # Навігація
-├── hooks/                  # Кастомні хуки
-│   ├── useCharacters       # Логіка списку персонажів
-│   └── useCharacter        # Логіка окремого персонажа
-├── types/                  # TypeScript типи
-└── utils/                  # Утиліти (API клієнт)
-```
+├── app/ # App Router структура
+│ ├── character/[id]/ # Динамічні роути
+│ ├── episodes/ # (не дописано - .txt файл)
+│ └── layout.tsx # Глобальний layout
+├── components/ # Перевикористовувані компоненти
+│ ├── AutocompleteInput # Пошук з автодоповненням
+│ ├── CharactersCard # Картка персонажа
+│ └── Navbar # Навігація
+├── hooks/ # Кастомні хуки
+│ ├── useCharacters # Логіка списку персонажів
+│ └── useCharacter # Логіка окремого персонажа
+├── types/ # TypeScript типи
+└── utils/ # Утиліти (API клієнт)
+
+````
 
 ### Головна сторінка
 
@@ -82,4 +83,4 @@ npm run dev
 
 # Білд для продакшену
 npm run build
-```
+````
