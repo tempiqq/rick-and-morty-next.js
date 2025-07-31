@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty Wiki
 
-## Getting Started
+- **Головна сторінка** з пошуком персонажів та фільтрацією
+- **Сторінка персонажа** з детальною інформацією
+- **Автодоповнення** для пошуку персонажів
+- **Пагінація** для навігації по результатах
+- **Фільтри** за статусом та статтю
 
-First, run the development server:
+### Технології
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 14** - для роутінгу та серверних компонентів
+- **TypeScript** - для типізації
+- **Tailwind CSS** - для стилізації
+- **Rick and Morty API** - для даних
+
+### Next.js Features
+
+- **App Router** - новий роутер з Next.js 13+
+- **Dynamic Routes** - `/character/[id]` для сторінок персонажів
+- **Client Components** - де потрібна інтерактивність
+
+### React Patterns
+
+- **Custom Hooks** - `useCharacters`, `useCharacter` для логіки
+- **Controlled Components** - для форм та інпутів
+- **State Management** - локальний стан з useState
+
+## 📁 Архітектура
+
+src/
+├── app/                    # App Router структура
+│   ├── character/[id]/     # Динамічні роути
+│   ├── episodes/           # (не дописано - .txt файл)
+│   └── layout.tsx          # Глобальний layout
+├── components/             # Перевикористовувані компоненти
+│   ├── AutocompleteInput   # Пошук з автодоповненням
+│   ├── CharactersCard      # Картка персонажа
+│   └── Navbar              # Навігація
+├── hooks/                  # Кастомні хуки
+│   ├── useCharacters       # Логіка списку персонажів
+│   └── useCharacter        # Логіка окремого персонажа
+├── types/                  # TypeScript типи
+└── utils/                  # Утиліти (API клієнт)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Головна сторінка
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Пошук персонажів з автодоповненням
+- Фільтрація за статусом (Alive/Dead/Unknown)
+- Фільтрація за статтю (Male/Female/Genderless)
+- Пагінація з навігацією
+- Responsive дизайн
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Сторінка персонажа
 
-## Learn More
+- Детальна інформація про персонажа
+- Зображення, статус, вид, локація
+- Навігація назад до списку
 
-To learn more about Next.js, take a look at the following resources:
+### Автодоповнення
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Debounced пошук (300ms затримка)
+- Dropdown з підказками
+- Навігація по кліку
+- Loading стани
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚧 Що не дописано
 
-## Deploy on Vercel
+- **Episodes** - сторінка епізодів (збережена як .txt)
+- **Locations** - сторінка локацій (збережена як .txt)
+- **Error Boundaries** - обробка помилок
+- **Loading States** - скілетони завантаження
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Запуск
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Встановлення залежностей
+npm install
+
+# Запуск dev сервера
+npm run dev
+
+# Білд для продакшену
+npm run build
+```
