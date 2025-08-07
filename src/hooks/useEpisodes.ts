@@ -31,9 +31,9 @@ export const useEpisodes = () => {
         setEpisodes(result.results);
       } else {
         setEpisodes((prev) => {
-          const existingIds = new Set(prev.map((e) => e.id));
+          const existingIds = new Set(prev.map((e: Episode) => e.id));
           const newEpisodes = result.results.filter(
-            (e) => !existingIds.has(e.id)
+            (e: Episode) => !existingIds.has(e.id)
           );
           return [...prev, ...newEpisodes];
         });
