@@ -1,5 +1,3 @@
-import { Info } from "./common";
-
 export type Episode = {
   id: number;
   name: string;

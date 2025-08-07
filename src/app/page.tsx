@@ -12,7 +12,6 @@ export default function Home() {
     info,
     currentPage,
 
-    searchName,
     inputValue,
     filterStatus,
     filterGender,

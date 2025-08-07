@@ -4,6 +4,12 @@ import { useState, useMemo, useEffect } from "react";
 import { getCharacters } from "@/api/charactersApi";
 
 export const useCharacters = () => {
+  type Info = {
+    pages?: number;
+    next?: string | null;
+    prev?: string | null;
+  };
+
   const searchParams = useSearchParams();
 
   const [currentPage, setCurrentPage] = useState(
@@ -21,7 +27,7 @@ export const useCharacters = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [info, setInfo] = useState<any>(null);
+  const [info, setInfo] = useState<Info | null>(null);
 
   const searchParamsObj = useMemo(
     () => ({
@@ -32,7 +38,10 @@ export const useCharacters = () => {
     [searchName, filterStatus, filterGender]
   );
 
-  const fetchCharacters = async (page: number, params: any) => {
+  const fetchCharacters = async (
+    page: number,
+    params: Record<string, string>
+  ) => {
     setLoading(true);
     setError(null);
     try {
